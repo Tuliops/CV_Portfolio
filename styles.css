@@ -1,0 +1,418 @@
+:root {
+    /* Paleta oscura profesional */
+    --primary: #e2e8f0;
+    --secondary: #a0aec0;
+    --accent: #63b3ed;
+    --bg: #1a202c;
+    --card-bg: #2d3748;
+    --border: #4a5568;
+    --skill-bg: #2c5282;
+    --hover-bg: #4299e1;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.65;
+    color: var(--primary);
+    background-color: var(--bg);
+    margin: 0;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 300;
+    transition: background-color 0.4s ease;
+}
+
+/* Contenedor principal */
+.main-container {
+    display: flex; /* Contenedor principal con Flexbox */
+}
+
+/* Barra lateral */
+.sidebar {
+    width: 250px; /* Ancho fijo de la barra lateral */
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    position: sticky; /* Barra lateral fija */
+    top: 20px; /* Margen superior */
+    left: 0; /* Alineada a la izquierda */
+    height: fit-content; /* Ajusta la altura al contenido */
+    transition: width 0.3s ease; /* Transición para ocultar/mostrar */
+}
+
+/* Contenedor de contenido principal */
+.content-container {
+    flex: 1; /* Ocupa el espacio restante */
+    padding-left: 20px; /* Espacio entre la barra lateral y el contenido */
+}
+
+/* Lista de proyectos */
+.project-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.project-list li {
+    margin-bottom: 15px;
+}
+
+.project-list a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.project-list a:hover {
+    text-decoration: underline;
+}
+
+/* Botón de despliegue (solo visible en pantallas pequeñas) */
+.sidebar-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--accent);
+    cursor: pointer;
+    display: none; /* Oculto por defecto */
+}
+
+/* Ocultar barra lateral en pantallas pequeñas */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 0; /* Ancho 0 para ocultar */
+        overflow: hidden; /* Ocultar contenido */
+        padding: 0; /* Eliminar padding */
+    }
+
+    .sidebar-hidden {
+        width: 250px; /* Mostrar barra lateral */
+        padding: 20px; /* Restaurar padding */
+    }
+
+    .content-container {
+        padding-left: 0; /* Eliminar espacio izquierdo */
+    }
+
+    .sidebar-toggle {
+        display: block; /* Mostrar botón */
+    }
+}
+
+/* Contenedor principal del currículum */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 40px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+}
+
+/* Encabezado del perfil */
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--border);
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent);
+    margin-right: 25px;
+    transition: all 0.3s ease;
+    filter: grayscale(15%) brightness(0.9);
+}
+
+.profile-img:hover {
+    filter: grayscale(0%) brightness(1);
+    transform: rotate(2deg) scale(1.03);
+}
+
+header h1 {
+    color: var(--primary);
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+header h2 {
+    color: var(--accent);
+    margin: 8px 0 0;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+.contacto-header {
+    margin-top: 15px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contacto-header span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--secondary);
+    transition: color 0.2s ease;
+}
+
+.contacto-header span:hover {
+    color: var(--accent);
+}
+
+/* Secciones del currículum */
+section {
+    margin-bottom: 35px;
+    opacity: 0;
+    animation: sectionFadeIn 0.6s ease forwards;
+    animation-delay: 0.3s;
+}
+
+/* Animación de entrada para secciones */
+@keyframes sectionFadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+h3 {
+    color: var(--accent);
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 18px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+    display: inline-block;
+    transition: border-color 0.3s ease;
+}
+
+h3:hover {
+    border-bottom-color: var(--accent);
+}
+
+/* Listas */
+ul {
+    padding-left: 22px;
+    list-style-type: none;
+}
+
+ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 28px;
+    transition: transform 0.3s ease;
+}
+
+ul li::before {
+    content: "▹";
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+ul li:hover {
+    transform: translateX(5px);
+}
+
+ul li:hover::before {
+    color: var(--primary);
+}
+
+/* Experiencia laboral */
+.job {
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed var(--border);
+    transition: border-color 0.3s ease;
+}
+
+.job:last-child {
+    border-bottom: none;
+}
+
+.job:hover {
+    border-bottom-color: var(--accent);
+}
+
+.job h4 {
+    color: var(--primary);
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.company {
+    color: var(--secondary);
+    font-style: italic;
+    margin: 0 0 5px 0;
+    font-size: 0.95rem;
+}
+
+.date {
+    color: var(--secondary);
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    display: inline-block;
+    opacity: 0.8;
+}
+
+/* Habilidades técnicas */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 48%));
+    gap: 12px;
+}
+
+.skills-grid span {
+    background-color: var(--skill-bg);
+    color: white;
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: skillEntry 0.5s ease forwards;
+    transition: all 0.3s ease;
+}
+
+/* Animación de entrada para habilidades */
+@keyframes skillEntry {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skills-grid span:hover {
+    background-color: var(--hover-bg);
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Retrasos para animación en cascada */
+.skills-grid span:nth-child(1) {
+    animation-delay: 0.4s;
+}
+
+.skills-grid span:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+/* Herramientas */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+}
+
+.tool-category {
+    padding: 18px;
+    border-left: 3px solid var(--accent);
+    background-color: rgba(66, 153, 225, 0.08);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.tool-category:hover {
+    background-color: rgba(66, 153, 225, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tool-category h4 {
+    color: var(--accent);
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+/* Habilidades blandas */
+.soft-skills {
+    columns: 2;
+    column-gap: 25px;
+}
+
+.soft-skills li {
+    margin-bottom: 10px;
+    break-inside: avoid;
+    transition: all 0.3s ease;
+}
+
+.soft-skills li:hover {
+    color: var(--accent);
+}
+
+/* Íconos con colores originales pero atenuados */
+.fa-html5 {
+    color: #e34c26;
+    opacity: 0.9;
+}
+
+.fa-css3-alt {
+    color: #264de4;
+    opacity: 0.9;
+}
+
+.fa-js {
+    color: #f0db4f;
+    opacity: 0.9;
+}
+
+/* Estilos para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-img {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .contacto-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 100%));
+    }
+
+    .tools-grid {
+        grid-template-columns: 100%;
+    }
+    body{
+        font-size: 14px;
+    }
+}

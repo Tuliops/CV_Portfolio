@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    <link rel="stylesheet" href="stylesLDT.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Lista de Tareas</h1>
+        </header>
+        <main>
+            <section class="add-task">
+                <form id="task-form">
+                    <input type="text" id="task-input" placeholder="Nueva tarea..." required>
+                    <input type="date" id="due-date">
+                    <select id="priority-select">
+                        <option value="">Prioridad</option>
+                        <option value="alta">Alta</option>
+                        <option value="media">Media</option>
+                        <option value="baja">Baja</option>
+                    </select>
+                    <button type="submit">Agregar</button>
+                </form>
+            </section>
+            <section class="filter-tasks">
+            </section>
+            <section class="priority-columns">
+                <div class="priority-column" id="alta-priority-column">
+                    <h2>Alta Prioridad</h2>
+                    <ul class="task-list" id="alta-priority-list"></ul>
+                </div>
+                <div class="priority-column" id="media-priority-column">
+                    <h2>Media Prioridad</h2>
+                    <ul class="task-list" id="media-priority-list"></ul>
+                </div>
+                <div class="priority-column" id="baja-priority-column">
+                    <h2>Baja Prioridad</h2>
+                    <ul class="task-list" id="baja-priority-list"></ul>
+                </div>
+            </section>
+        </main>
+    </div>
+    <button id="dark-mode-btn">Modo Oscuro</button>
+    <script src="scriptsLDT.js"></script>
+</body>
+</html>
