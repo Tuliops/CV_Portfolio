@@ -1,0 +1,12 @@
+<div class="container">
+  <button class="toggle-theme" (click)="toggleTheme()">
+    <!-- Aquí puedes usar un ícono, como un emoji 🌓 o un ícono SVG -->
+    🌓
+  </button>
+  <nav>
+    <a [routerLink]="['/contacts']">Ver Contactos</a>
+    <a [routerLink]="['/add-contact']">Añadir Contacto</a>
+  </nav>
+  <hr>
+  <router-outlet></router-outlet>
+</div>
