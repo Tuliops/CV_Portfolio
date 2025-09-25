@@ -1,0 +1,72 @@
+@import '../../../styles.scss';
+
+.contact-list {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: $border-radius;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  .dark-mode & {
+    background-color: $dark-secondary-color;
+    box-shadow: $shadow-dark;
+    color: $dark-text-color;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 12px 15px;
+  }
+
+  thead {
+    background-color: $light-primary-color;
+    color: white;
+    .dark-mode & {
+      background-color: $dark-primary-color;
+      color: $dark-bg-color;
+    }
+  }
+
+  tbody tr {
+    border-bottom: 1px solid #dee2e6;
+    transition: background-color 0.3s ease;
+
+    .dark-mode & {
+      border-bottom: 1px solid lighten($dark-secondary-color, 10%);
+    }
+
+    &:hover {
+      background-color: rgba(114, 29, 219, 0.1);
+      .dark-mode & {
+        background-color: rgba(136, 66, 221, 0.2);
+      }
+    }
+  }
+}
+
+.btn-delete {
+  background-color: transparent;
+  color: #dc3545;
+  border: 1px solid #dc3545;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+
+  &:hover {
+    background-color: #dc3545;
+    color: white;
+    transform: scale(1.05);
+  }
+
+  .dark-mode & {
+    color: #ef476f;
+    border-color: #ef476f;
+    &:hover {
+      background-color: #ef476f;
+      color: white;
+    }
+  }
+}

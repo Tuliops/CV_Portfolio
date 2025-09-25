@@ -1,0 +1,58 @@
+@import '../../../styles.scss';
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  border: 1px solid lighten($dark-secondary-color, 15%);
+  border-radius: $border-radius;
+  background-color: lighten($dark-secondary-color, 5%);
+  transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  transition: color 0.5s ease;
+  color: $dark-text-color;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid darken($dark-secondary-color, 15%);
+  border-radius: 5px;
+  background-color: darken($dark-secondary-color, 5%);
+  color: $dark-text-color;
+  transition: border-color 0.3s ease, background-color 0.5s ease;
+
+  &:focus {
+    outline: none;
+    border-color: $dark-primary-color;
+  }
+}
+
+.btn-submit {
+  background-color: $dark-primary-color;
+  color: lighten($dark-bg-color, 50%);
+  border: 1px solid $dark-primary-color;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: lighten($dark-primary-color, 10%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+

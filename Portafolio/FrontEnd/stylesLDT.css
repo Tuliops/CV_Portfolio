@@ -1,0 +1,207 @@
+/* Estilos generales para la página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna y legible */
+    margin: 0; /* Elimina márgenes predeterminados */
+    padding: 0; /* Elimina rellenos predeterminados */
+    background-color: #2d3436; /* Modo oscuro como predeterminado */
+    color: #e0e0e0; /* Color de texto claro para modo oscuro */
+    line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
+    font-size: 16px; /* Tamaño de fuente base para todo el body */
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    width: 90%; /* Ancho del contenedor */
+    max-width: 1200px; /* Ancho máximo para pantallas grandes */
+    margin: 20px auto; /* Margen automático para centrar */
+    background-color: #37474f; /* Fondo oscuro para el contenedor */
+    padding: 30px; /* Relleno interior */
+    border-radius: 15px; /* Bordes redondeados más suaves */
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1); /* Sombra suave para modo oscuro */
+}
+
+/* Estilos para el título principal */
+h1 {
+    color: #81d4fa; /* Color azul claro para el título en modo oscuro */
+    text-align: center; /* Alineación centrada */
+    margin-bottom: 30px; /* Margen inferior */
+    font-weight: 600; /* Peso de la fuente */
+    font-size: 2.2em; /* Tamaño de fuente más grande para el título */
+    font-family: 'Arial', sans-serif; /* Fuente diferente para el título */
+}
+
+/* Estilos para el formulario de agregar tareas */
+.add-task form {
+    display: flex; /* Contenedor flexible */
+    flex-wrap: wrap; /* Permite envolver elementos */
+    gap: 15px; /* Espacio entre elementos */
+    margin-bottom: 30px; /* Margen inferior */
+}
+
+.add-task input[type="text"],
+.add-task input[type="date"],
+.add-task select,
+.add-task button {
+    padding: 15px; /* Relleno interior */
+    border: 1px solid #546e7a; /* Borde gris oscuro */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 1em; /* Tamaño de fuente */
+    flex: 1; /* Permite que los elementos crezcan */
+    font-family: 'Verdana', sans-serif; /* Fuente diferente para los inputs */
+    background-color: #455a64; /* Fondo gris oscuro para los inputs */
+    color: #e0e0e0; /* Color de texto claro para los inputs */
+}
+
+.add-task button {
+    background-color: #64b5f6; /* Color azul claro para el botón */
+    color: #263238; /* Color de texto oscuro para el botón */
+    cursor: pointer; /* Cursor de puntero */
+    border: none; /* Sin borde */
+    transition: background-color 0.3s ease; /* Transición suave */
+    font-weight: 600; /* Peso de la fuente */
+}
+
+.add-task button:hover {
+    background-color: #42a5f5; /* Color azul más claro al pasar el ratón */
+}
+
+/* Estilos para los filtros */
+.filter-tasks {
+    display: flex; /* Contenedor flexible */
+    gap: 15px; /* Espacio entre elementos */
+    margin-bottom: 30px; /* Margen inferior */
+}
+
+/* Estilos para las columnas de prioridad */
+.priority-columns {
+    display: flex; /* Contenedor flexible */
+    gap: 0; /* Elimina el espacio entre columnas */
+}
+
+.priority-column {
+    flex: 1; /* Permite que las columnas crezcan */
+    border: 1px solid #546e7a; /* Borde gris oscuro */
+    border-radius: 15px; /* Bordes redondeados más suaves */
+    padding: 20px; /* Relleno interior */
+    background-color: #37474f; /* Fondo gris oscuro para las columnas */
+}
+
+.priority-column h2 {
+    font-size: 1.2em; /* Tamaño de fuente */
+    margin-bottom: 15px; /* Margen inferior */
+    text-align: center; /* Alineación centrada */
+    color: #000; /* Color Negro  para los encabezados de prioridad */
+    font-family: 'Georgia', serif; /* Fuente diferente para los encabezados de prioridad */
+}
+
+/* Estilos para la lista de tareas */
+.task-list {
+    list-style: none; /* Sin estilos de lista */
+    padding: 0; /* Sin relleno */
+}
+
+.task-list li {
+    display: flex; /* Contenedor flexible */
+    justify-content: space-between; /* Espacio entre elementos */
+    padding: 15px; /* Relleno interior */
+    border-bottom: 1px solid #546e7a; /* Borde gris oscuro para separar los elementos */
+    align-items: center; /* Alineación vertical centrada */
+    font-family: 'Tahoma', sans-serif; /* Fuente diferente para los elementos de la lista */
+    color: #000; /* Color de texto negro para los elementos de la lista */
+    border-radius: 8px; /* Bordes redondeados */
+    margin-bottom: 10px; /* Espacio entre elementos */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.task-list li:last-child {
+    border-bottom: none; /* Sin borde inferior para el último elemento */
+    margin-bottom: 0; /* Sin margen inferior para el último elemento */
+}
+
+/* Colores de prioridad (semáforo) */
+#alta-priority-column {
+    background-color: #b40f0f; /* Rojo */
+}
+
+#media-priority-column {
+    background-color: #ffed61; /* Amarillo */
+}
+
+#baja-priority-column {
+    background-color: #259f25; /* Verde */
+}
+
+/* Estilos para el botón de modo oscuro */
+#dark-mode-btn {
+    position: fixed; /* Posicionamiento fijo */
+    top: 20px; /* Distancia desde la parte superior */
+    right: 20px; /* Distancia desde la derecha */
+    background-color: #64b5f6; /* Color azul claro para el botón */
+    color: #263238; /* Color de texto oscuro para el botón */
+    border: none; /* Sin borde */
+    padding: 12px 24px; /* Relleno interior */
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de puntero */
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+    transition: background-color 0.3s ease; /* Transición suave */
+    font-weight: 600; /* Peso de la fuente */
+    font-family: 'Calibri', sans-serif; /* Fuente diferente para el botón de modo oscuro */
+}
+
+#dark-mode-btn:hover {
+    background-color: #42a5f5; /* Color azul más claro al pasar el ratón */
+}
+
+/* Colores de fondo de las tareas */
+#alta-priority-column .task-list li {
+    background-color: #b40f0f; /* Rojo */
+    color: #000; /* Texto negro para mejor contraste */
+}
+
+#media-priority-column .task-list li {
+    background-color: #ffed61; /* Amarillo */
+    color: #000; /* Texto negro para mejor contraste */
+}
+
+#baja-priority-column .task-list li {
+    background-color: #259f25; /* Verde */
+    color: #000; /* Texto Negro para mejor contraste */
+}
+
+/* Resaltado de tareas al pasar el mouse */
+#alta-priority-column .task-list li:hover {
+    background-color: #c82333; /* Rojo más claro */
+}
+
+#media-priority-column .task-list li:hover {
+    background-color: #fff280; /* Amarillo más claro */
+}
+
+#baja-priority-column .task-list li:hover {
+    background-color: #38b038; /* Verde más claro */
+}
+
+/* Estilos para el modo claro */
+.light-mode {
+    background-color: #f4f7f6; /* Fondo claro */
+    color: #333; /* Color de texto oscuro para modo claro */
+}
+
+.light-mode .container {
+    background-color: #fff; /* Fondo blanco para el contenedor */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para modo claro */
+}
+
+.light-mode h1 {
+    color: #4a90e2; /* Color azul para el título en modo claro */
+}
+
+/* Estilos para el botón en modo oscuro */
+.dark-mode #dark-mode-btn {
+    background-color: #37474f; /* Color gris oscuro para modo oscuro */
+    color: #e0e0e0; /* Color de texto claro para modo oscuro */
+}
+
+.dark-mode #dark-mode-btn:hover {
+    background-color: #546e7a; /* Color gris más claro al pasar el ratón */
+}

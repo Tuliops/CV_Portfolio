@@ -1,0 +1,30 @@
+<ng-container *ngIf="contacts.length > 0; else noContacts">
+  <table class="contact-list">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Teléfono</th>
+        <th>Correo Electrónico</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts">
+        <td>{{ contact.id }}</td>
+        <td>{{ contact.name }}</td>
+        <td>{{ contact.phone }}</td>
+        <td>{{ contact.email }}</td>
+        <td>
+          <button class="btn-delete" (click)="onDelete(contact.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
+
+<ng-template #noContacts>
+  <p class="text-center mt-4">
+    No tienes contactos guardados. <a [routerLink]="['/add-contact']">¡Añade uno ahora!</a>
+  </p>
+</ng-template>
